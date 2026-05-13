@@ -9,7 +9,7 @@ function App() {
     useEffect (() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/persons');
+                const response = await fetch('https://l-usmf.onrender.com/api/persons');
                 const data = await response.json();
                 setPersons(data);
             }
@@ -24,7 +24,7 @@ function App() {
     const deletePerson = async(id, name) => {
         if (window.confirm('Are you sure you want to delete {name} ?')){
         try {
-            const response = await fetch(`http://localhost:5000/api/persons/${id}`,
+            const response = await fetch(`https://l-usmf.onrender.com/api/persons/${id}`,
                 {
                     'Content-Type' : 'application/json',
                     method : 'DELETE'
@@ -52,7 +52,7 @@ function App() {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/api/persons', {
+            const response = await fetch('https://l-usmf.onrender.com/api/persons', {
                 method : 'POST',
                 headers : {'Content-Type' : 'application/json'},
                 body : JSON.stringify(newPerson)
